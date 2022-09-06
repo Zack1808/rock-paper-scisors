@@ -1,6 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+// Importing the image
+import Triangle from "../images/bg-triangle.svg";
+
+// Importing the style file
+import '../css/Game.css';
+
 // Creating the Game component
 const Game = ({ setPlayerChoice }) => {
 
@@ -10,15 +16,18 @@ const Game = ({ setPlayerChoice }) => {
     
     return (
         <div className='play'>
-            <Link to="/game" >
-                <div className="icon icon--paper" data-id="paper" onClick={setChoice}>Paper</div>
-            </Link>
-            <Link to="/game" >
-                <div className="icon icon--scissors" data-id="scissors" onClick={setChoice}>Scissors</div>
-            </Link>
-            <Link to="/game" >
-                <div className="icon icon--rock" data-id="rock" onClick={setChoice}>Rock</div>
-            </Link>
+            <img src={Triangle} alt="" className='triangle' />
+            <div className="items">
+                <Link to="/game" >
+                    <div className="icon icon--paper" data-id="paper" onClick={setChoice}></div>
+                </Link>
+                <Link to="/game" >
+                    <div className="icon icon--scissors" data-id="scissors" onClick={setChoice}></div>
+                </Link>
+                <Link to="/game" >
+                    <div className="icon icon--rock" data-id="rock" onClick={setChoice}></div>
+                </Link>
+            </div>
         </div>
     )
 };

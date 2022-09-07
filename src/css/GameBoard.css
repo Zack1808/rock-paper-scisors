@@ -1,0 +1,106 @@
+.game {
+    display: flex;
+    margin-top: 50px;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.game .player_picked .text,
+.game .house_picked .text {
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 2.5rem ;
+}
+
+.game .player_picked {
+    margin-right: 2.5rem;
+}
+
+.game .house_picked {
+    margin-left: 2.5rem;
+}
+
+.game .player_picked,
+.game .house_picked {
+    display: flex;
+    flex-direction: column;
+}
+
+.game .player_picked .icon,
+.game .house_picked .icon {
+    height: 250px;
+    width: 250px;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 25px solid;
+    background-size: 50%;
+}
+
+.game .player_picked .icon--paper,
+.game .house_picked .icon--paper{
+    background-image: url("../images/icon-paper.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    border-color: var(--paper-color);
+}
+
+.game .player_picked .icon--rock,
+.game .house_picked .icon--rock{
+    background-image: url("../images/icon-rock.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    border-color: var(--rock-color);
+}
+
+.game .player_picked .icon--scissors,
+.game .house_picked .icon--scissors{
+    background-image: url("../images/icon-scissors.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    border-color: var(--scissors-color);
+}
+
+.game .player_picked .winner,
+.game .house_picked .winner {
+    box-shadow: 0px 0px 0px 50px rgba(255, 255, 255, .07),
+                0px 0px 0px 100px rgba(255, 255, 255, .05) ,
+                0px 0px 0px 150px rgba(255, 255, 255, .025) ;
+}
+
+.game .result_play {
+    display: flex;
+    flex-direction: column;
+    margin: 0 2rem;
+}
+
+.game .result_play .text {
+    text-transform: uppercase;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.game .result_play .play-again {
+    background-color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: .8rem;
+}
+
+.game .result_play .play-again:hover {
+    color: red
+}
+
+.game .counter{
+    height: 250px;
+    width: 250px;
+    background-color: rgba(0, 0, 0, .3);
+    border-radius: 50%;
+    font-size: 8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

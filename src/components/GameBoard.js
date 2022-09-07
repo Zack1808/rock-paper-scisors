@@ -1,11 +1,16 @@
+import { clear } from '@testing-library/user-event/dist/clear';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+
+// Importing the style file
+import '../css/GameBoard.css'
 
 // Creating the GameBoard component
 const GameBoard = ({ score, playerChoice, setScore }) => {
 
     const [house, setHouse] = useState("");
     const [win, setWin] = useState("");
+    const [counter, setCounter] = useState(3);
 
     const newHousePick = () => {
         const choices = ["rock", "paper", "scissors"];
@@ -17,8 +22,13 @@ const GameBoard = ({ score, playerChoice, setScore }) => {
     }, []); 
 
     useEffect(() => {
-        result();
-    }, [house])
+        const timer  = counter > 0 ? setInterval(() => {
+            setCounter(counter - 1);
+        }, 1000) : result();
+        return () => {
+            clearInterval(timer)
+        }
+    }, [counter,house])
 
     const result = () => {
         if(playerChoice === "rock" && house === "scissors") {
@@ -44,17 +54,47 @@ const GameBoard = ({ score, playerChoice, setScore }) => {
         }
     }
 
+    const displayResult = () => {
+        if(win == "win") {
+            return (
+                <div className="result_play">
+                    <div className="text">You Win</div>
+                    <Link className='play-again' onClick={() => setHouse()} to="/">Play Again</Link>
+                </div>
+            )
+        };
+        if(win == "lose") {
+            return (
+                <div className="result_play">
+                    <div className="text">You Lose</div>
+                    <Link className='play-again' onClick={() => setHouse()} to="/">Play Again</Link>
+                </div>
+            )
+        };
+        return (
+            <div className="result_play">
+                <div className="text">It's a Draw</div>
+                <Link className='play-again' onClick={() => setHouse()} to="/">Play Again</Link>
+            </div>
+        )
+    }
+
     return ( 
         <div className='game'>
-            Player Choice: {playerChoice}<br/>
-            House Choice: {house}<br />
-
-            Result: 
-            {win == "win" && <h2>You Win</h2>}
-            {win == "lose" && <h2>You Lose</h2>}
-            {win == "draw" && <h2>Its a Draw</h2>}
-
-            <Link to="/" onClick={() => setHouse()}>Play Again</Link>
+            <div className="player_picked">
+                <span className="text">You picked</span>
+                <div className={`icon icon--${playerChoice} ${win == "win" ? "winner" : ""}`}></div>
+            </div>
+            { counter == 0 ? displayResult() : ""}
+            <div className="house_picked">
+                <span className="text">The House picked</span>
+                { counter == 0 ? (
+                    <div className={`icon icon--${house} ${win == "lose" ? "winner" : ""}`}></div>
+                ) : (
+                    <div className="counter">{counter}</div>
+                )}
+            </div>
+            
         </div> 
     )
 };

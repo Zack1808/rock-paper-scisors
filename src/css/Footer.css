@@ -1,5 +1,6 @@
 .footer {
     width: 100vw;
+    bottom: 0;
 }
 
 .footer .attribution {
@@ -26,4 +27,15 @@
     background-color: rgb(255, 255, 255);
     color: var(--dark-text);
     cursor: pointer;
+}
+
+@media (max-width: 1000px) {
+
+    .footer .attribution {
+        display: none;;
+    }
+
+    .footer .rules {
+        left: 1rem;
+    }
 }

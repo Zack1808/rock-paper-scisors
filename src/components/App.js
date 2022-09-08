@@ -18,6 +18,9 @@ const App = () => {
 
     return (
         <BrowserRouter basename={process.env.PUBLIC_URL}>
+            <div className="rotate">
+                <h1>Please rotate the screen to portrait mode to play</h1>
+            </div>
             <div className='container'>
                 <Header score={score} />
                 <Routes>

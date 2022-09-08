@@ -16,7 +16,7 @@
 *, *::before, *::after {
     margin: 0;
     padding: 0;
-    box-sizing: inherit;
+    box-sizing: border-box !important;
 }
 
 body {
@@ -24,11 +24,35 @@ body {
     color: #fff;
     text-align: center;
     background: var(--background-gradient);
-    box-sizing: border-box;
+    margin: 0 auto;
+    height: 100% !important;
+    min-height: 100vw !important;
 }
 
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-width: 100% !important;
+}
+
+.rotate {
+    display: none;
+}
+
+@media (max-width: 1000px) and  (orientation: landscape){
+    body {
+        overflow: hidden;
+    }
+
+    .container {
+        display: none;
+    }
+
+    .rotate {
+        display: flex;
+        height: 90vh;
+        justify-content: center;
+        align-items: center;
+    }
 }

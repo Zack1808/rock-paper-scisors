@@ -1,15 +1,16 @@
 .play {
     width: 100%;
-    position: relative;
     margin-top: 50px;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .play .triangle {
-    position: absolute;
+    position: relative;
     align-self: center;
     margin-top: 70px;
+    width: 450px
 }
 
 .play .items {
@@ -18,26 +19,27 @@
 }
 
 .play .items .icon {
-    height: 160px;
+    display: inline-block;
     width: 160px;
+    height: 160px;
     border: 18px solid;
     border-radius: 50%;
     background-color: #fff;
     transition: transform .2s;
 }
 
-.play .items .icon--paper{
+.play .items .icon--paper {
     background-image: url("../images/icon-paper.svg");
     background-position: center;
     background-repeat: no-repeat;
     border-color: var(--paper-color);
-    transform: translateX(1.5rem);
+    transform: translateX(-1rem) translateY(-28rem);
     box-shadow: inset 0px 5px 6px grey,
                 0px 8px var(--paper-shadow);
 }
 
 .play .items .icon--paper:hover {
-    transform: translateX(1.5rem) scale(1.1);
+    transform: translateX(-1rem) translateY(-28rem) scale(1.1);
 }
 
 .play .items .icon--rock{
@@ -45,13 +47,13 @@
     background-position: center;
     background-repeat: no-repeat;
     border-color: var(--rock-color);
-    transform: translateX(-10rem) translateY(13rem);
+    transform: translateX(0rem) translateY(-7rem);
     box-shadow: inset 0px 5px 6px grey,
-                0px 8px var(--rock-shadow);
+                0px 8px var(--rock-shadow)
 }
 
 .play .items .icon--rock:hover {
-    transform: translateX(-10rem) translateY(13rem) scale(1.1);
+    transform: translateX(0rem) translateY(-7rem) scale(1.1);
 }
 
 .play .items .icon--scissors{
@@ -59,11 +61,44 @@
     background-position: center;
     background-repeat: no-repeat;
     border-color: var(--scissors-color);
-    transform: translateX(8rem);
+    transform: translateX(1rem) translateY(-27.8rem);
     box-shadow: inset 0px 5px 6px grey,
                 0px 8px var(--scissors-shadow);
 }
 
 .play .items .icon--scissors:hover {
-    transform: translateX(8rem) scale(1.1);
+    transform: translateX(1rem) translateY(-27.8rem) scale(1.1);
+}
+
+@media (max-width: 1000px) {
+    .play .triangle {
+        width: 250px;
+    }
+
+    .play .items .icon {
+        width: 100px;
+        height: 100px;
+        border-width: 10px;
+    }
+
+    .play .items .icon--paper {
+        box-shadow: inset 0px 5px 6px grey,
+                0px 5px var(--paper-shadow);
+        transform: translateX(-.5rem) translateY(-17rem);
+        background-size: 50% ;
+    }
+
+    .play .items .icon--rock {
+        box-shadow: inset 0px 5px 6px grey,
+                    0px 5px var(--rock-shadow);
+        transform: translateX(.2rem) translateY(-5rem);
+        background-size: 50% ;
+    }
+
+    .play .items .icon--scissors {
+        box-shadow: inset 0px 5px 6px grey,
+                    0px 5px var(--scissors-shadow);
+        transform: translateX(1rem) translateY(-17rem);
+        background-size: 50% ;
+    }
 }

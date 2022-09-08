@@ -18,15 +18,9 @@ const Game = ({ setPlayerChoice }) => {
         <div className='play'>
             <img src={Triangle} alt="" className='triangle' />
             <div className="items">
-                <Link to="/game" >
-                    <div className="icon icon--paper" data-id="paper" onClick={setChoice}></div>
-                </Link>
-                <Link to="/game" >
-                    <div className="icon icon--scissors" data-id="scissors" onClick={setChoice}></div>
-                </Link>
-                <Link to="/game" >
-                    <div className="icon icon--rock" data-id="rock" onClick={setChoice}></div>
-                </Link>
+                <Link to="/game" className="icon icon--paper" data-id="paper" onClick={setChoice} / >
+                <Link to="/game" className="icon icon--rock" data-id="rock" onClick={setChoice} />
+                <Link to="/game" className="icon icon--scissors" data-id="scissors" onClick={setChoice} />
             </div>
         </div>
     )

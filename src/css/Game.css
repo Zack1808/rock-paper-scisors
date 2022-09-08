@@ -32,6 +32,8 @@
     background-repeat: no-repeat;
     border-color: var(--paper-color);
     transform: translateX(1.5rem);
+    box-shadow: inset 0px 5px 6px grey,
+                0px 8px var(--paper-shadow);
 }
 
 .play .items .icon--paper:hover {
@@ -44,6 +46,8 @@
     background-repeat: no-repeat;
     border-color: var(--rock-color);
     transform: translateX(-10rem) translateY(13rem);
+    box-shadow: inset 0px 5px 6px grey,
+                0px 8px var(--rock-shadow);
 }
 
 .play .items .icon--rock:hover {
@@ -56,6 +60,8 @@
     background-repeat: no-repeat;
     border-color: var(--scissors-color);
     transform: translateX(8rem);
+    box-shadow: inset 0px 5px 6px grey,
+                0px 8px var(--scissors-shadow);
 }
 
 .play .items .icon--scissors:hover {

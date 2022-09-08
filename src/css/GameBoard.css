@@ -43,6 +43,8 @@
     background-position: center;
     background-repeat: no-repeat;
     border-color: var(--paper-color);
+    box-shadow: inset 0px 5px 6px grey,
+                0px 8px var(--paper-shadow);
 }
 
 .game .player_picked .icon--rock,
@@ -51,6 +53,8 @@
     background-position: center;
     background-repeat: no-repeat;
     border-color: var(--rock-color);
+    box-shadow: inset 0px 5px 6px grey,
+                0px 8px var(--rock-shadow);
 }
 
 .game .player_picked .icon--scissors,
@@ -59,11 +63,33 @@
     background-position: center;
     background-repeat: no-repeat;
     border-color: var(--scissors-color);
+    box-shadow: inset 0px 5px 6px grey,
+                0px 8px var(--scissors-shadow);
 }
 
-.game .player_picked .winner,
-.game .house_picked .winner {
-    box-shadow: 0px 0px 0px 50px rgba(255, 255, 255, .07),
+.game .player_picked .icon--rock.winner,
+.game .house_picked .icon--rock.winner {
+    box-shadow: inset 0px 5px 6px grey,
+                0px 8px var(--rock-shadow),
+                0px 0px 0px 50px rgba(255, 255, 255, .07),
+                0px 0px 0px 100px rgba(255, 255, 255, .05) ,
+                0px 0px 0px 150px rgba(255, 255, 255, .025) ;
+}
+
+.game .player_picked .icon--paper.winner,
+.game .house_picked .icon--paper.winner {
+    box-shadow: inset 0px 5px 6px grey,
+                0px 8px var(--paper-shadow),
+                0px 0px 0px 50px rgba(255, 255, 255, .07),
+                0px 0px 0px 100px rgba(255, 255, 255, .05) ,
+                0px 0px 0px 150px rgba(255, 255, 255, .025) ;
+}
+
+.game .player_picked .icon--scissors.winner,
+.game .house_picked .icon--scissors.winner {
+    box-shadow: inset 0px 5px 6px grey,
+                0px 8px var(--scissors-shadow),
+                0px 0px 0px 50px rgba(255, 255, 255, .07),
                 0px 0px 0px 100px rgba(255, 255, 255, .05) ,
                 0px 0px 0px 150px rgba(255, 255, 255, .025) ;
 }

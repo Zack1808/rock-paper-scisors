@@ -3,6 +3,9 @@ import React, { useState } from 'react';
 // Importing the costume made components
 import Modal from './Modal';
 
+// Importing helper functions
+import { toggleModal } from '../helpers/toogleModal';
+
 // Importing the style file
 import "../css/Footer.css";
 
@@ -11,10 +14,6 @@ const Footer = () =>{
 
     const [modal, setModal] = useState(false);
 
-    const toggleModal = () =>{
-        setModal(!modal)
-    }
-
     return (
         <>
             <footer className="footer">
@@ -22,12 +21,12 @@ const Footer = () =>{
                     Challanged by <a href='https://www.frontendmentor.io?ref=challange' target="_blank">Frontend Mentor</a>
                     Code by JPN
                 </div>
-                <button className="rules" onClick={toggleModal}>
+                <button className="rules" onClick={() => toggleModal(modal, setModal)}>
                     Rules
                 </button>
             </footer>
             {
-                modal ? <Modal toggle={toggleModal} /> : null
+                modal ? <Modal modal={modal} setModal={setModal} /> : null
             }
         </>
     )

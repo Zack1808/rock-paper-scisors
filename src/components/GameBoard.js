@@ -1,6 +1,10 @@
 import { clear } from '@testing-library/user-event/dist/clear';
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+
+// Importing the helpers
+import { displayResult } from '../helpers/displayResult';
+import { newHousePick } from '../helpers/setFunctions';
+import { result } from '../helpers/result';
 
 // Importing the style file
 import '../css/GameBoard.css'
@@ -12,72 +16,20 @@ const GameBoard = ({ score, playerChoice, setScore }) => {
     const [win, setWin] = useState("");
     const [counter, setCounter] = useState(3);
 
-    const newHousePick = () => {
-        const choices = ["rock", "paper", "scissors"];
-        setHouse(choices[Math.floor(Math.random()*3)])
-    };
-
+    // calls for the function that ramly chooses an option during rendering of the component
     useEffect(() => {
-        newHousePick();
+        newHousePick(setHouse);
     }, []); 
 
+    // Runs a timer that will countdown before revealing the opton the house choose every time the counter or the house option changes
     useEffect(() => {
         const timer  = counter > 0 ? setInterval(() => {
             setCounter(counter - 1);
-        }, 1000) : result();
+        }, 1000) : result(playerChoice, house, score, setScore, setWin);
         return () => {
             clearInterval(timer)
         }
     }, [counter,house])
-
-    const result = () => {
-        if(playerChoice === "rock" && house === "scissors") {
-            setWin("win");
-            setScore(score + 1);
-        } else if(playerChoice === "rock" && house === "paper") {
-            setWin("lose");
-            setScore(score - 1);
-        } else if(playerChoice === "paper" && house === "rock") {
-            setWin("win");
-            setScore(score + 1);
-        } else if(playerChoice === "paper" && house === "scissors") {
-            setWin("lose");
-            setScore(score - 1);
-        } else if(playerChoice === "scissors" && house === "paper") {
-            setWin("win");
-            setScore(score + 1);
-        } else if(playerChoice === "scissors" && house === "rock") {
-            setWin("lose");
-            setScore(score - 1);
-        } else {
-            setWin("draw")
-        }
-    }
-
-    const displayResult = () => {
-        if(win == "win") {
-            return (
-                <div className="result_play">
-                    <div className="text">You Win</div>
-                    <Link className='play-again' onClick={() => setHouse()} to="/">Play Again</Link>
-                </div>
-            )
-        };
-        if(win == "lose") {
-            return (
-                <div className="result_play">
-                    <div className="text">You Lose</div>
-                    <Link className='play-again' onClick={() => setHouse()} to="/">Play Again</Link>
-                </div>
-            )
-        };
-        return (
-            <div className="result_play">
-                <div className="text">It's a Draw</div>
-                <Link className='play-again' onClick={() => setHouse()} to="/">Play Again</Link>
-            </div>
-        )
-    }
 
     return ( 
         <div className='game'>
@@ -85,7 +37,7 @@ const GameBoard = ({ score, playerChoice, setScore }) => {
                 <span className="text">You picked</span>
                 <div className={`icon icon--${playerChoice} ${win == "win" ? "winner" : ""}`}></div>
             </div>
-            { counter == 0 ? displayResult() : ""}
+            { counter == 0 ? displayResult(win, setHouse) : ""}
             <div className="house_picked">
                 <span className="text">The House picked</span>
                 { counter == 0 ? (

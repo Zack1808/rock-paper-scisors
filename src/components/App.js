@@ -11,6 +11,7 @@ import Footer from './Footer';
 // Importing the style file
 import '../css/App.css';
 
+// Creating the App component
 const App = () => {
 
     const [playerChoice, setPlayerChoice] = useState("");

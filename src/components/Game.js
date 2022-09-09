@@ -10,6 +10,7 @@ import '../css/Game.css';
 // Creating the Game component
 const Game = ({ setPlayerChoice }) => {
 
+    // Function that will get the selected option of the player
     const setChoice = (e) =>{
         setPlayerChoice(e.target.dataset.id)
     }

@@ -130,3 +130,49 @@
     flex-direction: column;
     justify-content: center;
 }
+
+@media (max-width: 1000px) {
+    .game {
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 0;
+        width: 100%;
+    }
+
+    .game .player_picked,
+    .game .house_picked  {
+        margin: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .game .player_picked .text,
+    .game .house_picked .text {
+        margin-top: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .game .player_picked .icon,
+    .game .house_picked .icon {
+        width: 100px;
+        height: 100px;
+        border-width: 12px;
+    }
+
+    .game .result_play {
+        margin: 20px 2rem
+    }
+
+    .game .result_play .text {
+        font-size: 2rem;
+    }
+
+    .game .counter  {
+        width: 100px;
+        height: 100px;
+        font-size: 3rem;
+    }
+}

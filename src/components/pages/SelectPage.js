@@ -12,19 +12,19 @@ const SelectPage = ({ setSelection }) => {
         <Link
           to="/result"
           className="paper"
-          onClick={setSelection("paper")}
+          onClick={() => setSelection("paper")}
         ></Link>
         <Link
           to="/result"
           className="rock"
-          onClick={setSelection("rock")}
+          onClick={() => setSelection("rock")}
         ></Link>
       </div>
       <div className="row-icon">
         <Link
           to="/result"
           className="scissors"
-          onClick={setSelection("scissors")}
+          onClick={() => setSelection("scissors")}
         ></Link>
       </div>
     </div>

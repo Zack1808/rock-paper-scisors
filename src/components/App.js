@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 // Importing costume made components
 import Header from "./Header";
 import SelectPage from "./pages/SelectPage";
+import ResultPage from "./pages/ResultPage";
 import Footer from "./Footer";
 
 // Importing the style file
@@ -24,6 +25,13 @@ const App = () => {
             exact
             path="/"
             element={<SelectPage setSelection={setUserSelection} />}
+          />
+          <Route
+            exact
+            path="/result"
+            element={
+              <ResultPage setResult={setScore} userChoice={userSelection} />
+            }
           />
         </Routes>
         <Footer />

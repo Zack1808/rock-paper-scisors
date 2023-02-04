@@ -5,15 +5,27 @@ import { Link } from "react-router-dom";
 import "../../css/SelectPage.css";
 
 // Creating the SelectPage component
-const SelectPage = () => {
+const SelectPage = ({ setSelection }) => {
   return (
     <div className="select-container">
       <div className="row-icons">
-        <Link to="/result" className="paper"></Link>
-        <Link to="/result" className="rock"></Link>
+        <Link
+          to="/result"
+          className="paper"
+          onClick={setSelection("paper")}
+        ></Link>
+        <Link
+          to="/result"
+          className="rock"
+          onClick={setSelection("rock")}
+        ></Link>
       </div>
       <div className="row-icon">
-        <Link to="/result" className="scissors"></Link>
+        <Link
+          to="/result"
+          className="scissors"
+          onClick={setSelection("scissors")}
+        ></Link>
       </div>
     </div>
   );

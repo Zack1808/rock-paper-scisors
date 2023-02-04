@@ -3,10 +3,11 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // Importing costume made components
 import Header from "./Header";
+import SelectPage from "./pages/SelectPage";
+import Footer from "./Footer";
 
 // Importing the style file
 import "../css/App.css";
-import SelectPage from "./pages/SelectPage";
 
 // Creating the App component
 const App = () => {
@@ -25,6 +26,7 @@ const App = () => {
             element={<SelectPage setSelection={setUserSelection} />}
           />
         </Routes>
+        <Footer />
       </div>
     </BrowserRouter>
   );

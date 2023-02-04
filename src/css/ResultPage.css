@@ -4,12 +4,11 @@
   gap: 20px;
   align-items: center;
   width: 90%;
-  max-width: 900px;
   aspect-ratio: 16 / 9;
 }
 
 .result-container span {
-  width: 20%;
+  width: 15%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,9 +27,9 @@
 }
 
 .result {
-  width: 80%;
+  width: 90%;
   position: relative;
-  max-width: 200px;
+  max-width: 500px;
   padding: 20px;
   border-radius: 5px;
   background-color: var(--darker);

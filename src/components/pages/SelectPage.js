@@ -16,15 +16,16 @@ const SelectPage = ({ setSelection }) => {
         ></Link>
         <Link
           to="/result"
-          className="rock"
-          onClick={() => setSelection("rock")}
+          className="scissors"
+          scissors
+          onClick={() => setSelection("scissors")}
         ></Link>
       </div>
       <div className="row-icon">
         <Link
           to="/result"
-          className="scissors"
-          onClick={() => setSelection("scissors")}
+          className="rock"
+          onClick={() => setSelection("rock")}
         ></Link>
       </div>
     </div>

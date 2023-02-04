@@ -5,7 +5,7 @@
   margin: 0;
   box-sizing: border-box;
   font-family: "Audiowide", cursive;
-  /* outline: 1px solid lime !important; */
+  outline: 1px solid lime !important;
 }
 
 :root {

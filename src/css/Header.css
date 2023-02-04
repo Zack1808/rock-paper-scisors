@@ -24,6 +24,7 @@
   text-transform: uppercase;
   border-radius: 5px;
   font-family: "Audiowide", cursive;
+  user-select: none;
 }
 
 .score-display span {

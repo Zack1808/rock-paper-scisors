@@ -17,7 +17,6 @@ const SelectPage = ({ setSelection }) => {
         <Link
           to="/result"
           className="scissors"
-          scissors
           onClick={() => setSelection("scissors")}
         ></Link>
       </div>

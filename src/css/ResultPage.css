@@ -1,3 +1,7 @@
+.result a:hover {
+  transform: scale(1.02);
+}
+
 .result-container span {
   width: 15%;
   display: flex;
@@ -49,10 +53,6 @@
   font-weight: bolder;
   border-radius: 5px;
   transition: 0.3s ease-in-out;
-}
-
-.result a:hover {
-  transform: scale(1.02);
 }
 
 .result-container .win {

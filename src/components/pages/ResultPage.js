@@ -31,22 +31,18 @@ const ResultPage = ({ setResult, userChoice }) => {
 
   // Getting the result
   const getResult = () => {
-    if (userChoice === "rock" && aiSelection === "scissors") {
+    if (
+      (userChoice === "rock" && aiSelection === "scissors") ||
+      (userChoice === "paper" && aiSelection === "rock") ||
+      (userChoice === "scissors" && aiSelection === "paper")
+    ) {
       setResult((prevState) => prevState + 1);
       return "You Win";
-    } else if (userChoice === "rock" && aiSelection === "paper") {
-      setResult((prevState) => prevState - 1);
-      return "You Lose";
-    } else if (userChoice === "paper" && aiSelection === "rock") {
-      setResult((prevState) => prevState + 1);
-      return "You Win";
-    } else if (userChoice === "paper" && aiSelection === "scissors") {
-      setResult((prevState) => prevState - 1);
-      return "You Lose";
-    } else if (userChoice === "scissors" && aiSelection === "paper") {
-      setResult((prevState) => prevState + 1);
-      return "You Win";
-    } else if (userChoice === "scissors" && aiSelection === "rock") {
+    } else if (
+      (userChoice === "rock" && aiSelection === "paper") ||
+      (userChoice === "paper" && aiSelection === "scissors") ||
+      (userChoice === "scissors" && aiSelection === "rock")
+    ) {
       setResult((prevState) => prevState - 1);
       return "You Lose";
     } else {
@@ -56,7 +52,9 @@ const ResultPage = ({ setResult, userChoice }) => {
 
   return (
     <div className="result-container">
-      <span className={userChoice}></span>
+      <span
+        className={`${userChoice} ${res === "You Win" ? "win" : null}`}
+      ></span>
       {counter > 0 ? null : (
         <div className="result">
           <h2>{res}</h2>
@@ -66,7 +64,9 @@ const ResultPage = ({ setResult, userChoice }) => {
       {counter > 0 ? (
         <span className="counter">{counter}</span>
       ) : (
-        <span className={aiSelection}></span>
+        <span
+          className={`${aiSelection} ${res === "You Lose" ? "win" : null}`}
+        ></span>
       )}
     </div>
   );

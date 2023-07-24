@@ -12,7 +12,7 @@ This is a simple and interactive React based Rock-Paper-Scissors game that allow
 
 - User selection: the game allows the user to select one of the three signs used for rock-paper-scissors.
 - Random AI: the computer uses a randomizing function, randomly selecting on of the signs from the list.
-- Score tracking: the users score will increase by one for each victory, and will decreas by 1 for each loss. Should the game be a tie, no points are scored.
+- Score tracking: the users score will increase by one for each victory, and will decreas by one for each loss. Should the game be a tie, no points are scored.
 - Rule display: the user can check the rules of the game, which will display which sign beats which.
 - Responsive design for seamless gameplay on different devices.
 

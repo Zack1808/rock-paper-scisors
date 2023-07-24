@@ -20,7 +20,7 @@ This is a simple and interactive React based Rock-Paper-Scissors game that allow
 
 You can try out the Rock-Paper-Scissors Game by visiting the [live demo](https://zack1808.github.io/rock-paper-scisors/)
 
-## How to run the app
+## How to run the app locally
 
 If you want to run the app localy:
 
